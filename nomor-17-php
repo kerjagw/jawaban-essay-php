@@ -1,1 +1,10 @@
+<?php
 
+// (melanjutkan dari < Soal Essay 4 >): tulislah sebuah sintaks SQL untuk mendapatkan data yang menghitung total belanja dari setiap customer. ilustrasi nya seperti berikut
+SELECT
+	customers.nama as customers_name,
+	(SELECT SUM(orders.amount) FROM orders WHERE orders.customer_id = customers.id) as total_amount
+FROM
+	customers;
+
+?>
